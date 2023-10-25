@@ -7,6 +7,9 @@ import com.eduardo.uolsimplificado.model.dtos.PlayerDto;
 import com.eduardo.uolsimplificado.repositories.PlayerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class PlayerService {
@@ -22,5 +25,9 @@ public class PlayerService {
 
     private String getCodiname(GroupType groupType){
         return handler.findCodiname(groupType);
+    }
+
+    public List<Player> getAllPlayers() {
+        return repository.findAll();
     }
 }
